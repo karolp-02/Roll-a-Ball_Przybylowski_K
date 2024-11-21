@@ -16,7 +16,7 @@ public class MovementController : MonoBehaviour
     public void collectScore()
     {
         score++;
-        pickupEvent();
+        pickupEvent?.Invoke();
         if (score == 8)
         {
             SceneManager.LoadScene("poziom02");
