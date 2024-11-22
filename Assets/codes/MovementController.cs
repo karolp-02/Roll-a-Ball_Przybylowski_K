@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
 using System;
 
 public class MovementController : MonoBehaviour
 {
     public event Action pickupEvent;
-    public TMP_Text scoreText;
+    public event Action changeEvent;
     public int score;
     private Rigidbody rb;
     public float thrust = 1;
@@ -17,17 +15,7 @@ public class MovementController : MonoBehaviour
     {
         score++;
         pickupEvent?.Invoke();
-        if (score == 8)
-        {
-            SceneManager.LoadScene("poziom02");
-        }
-        else
-            scoreText.text = "Score: " + score;
-
-        if (score == 11)
-        {
-            SceneManager.LoadScene("endScene");
-        }
+        changeEvent?.Invoke();
     }
 
     public void GetInput()

@@ -15,6 +15,7 @@ public class textScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mc = player.GetComponent<MovementController>();
         player = GameObject.FindGameObjectWithTag("Player");
         mc.pickupEvent += UpdateScoreText;
     }
