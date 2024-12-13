@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collect
   - ScoreText
+  - collectEffect
   layers:
   - Default
   - TransparentFX
