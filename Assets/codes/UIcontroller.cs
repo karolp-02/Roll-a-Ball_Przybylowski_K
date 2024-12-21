@@ -10,7 +10,12 @@ public class UIcontroller : MonoBehaviour
 
     public void ShowOptions()
     {
+        SceneManager.LoadScene("settingsUI");
+    }
 
+    public void HideOptions()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGame()
