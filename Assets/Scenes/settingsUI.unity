@@ -347,7 +347,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MASTER VOLUME
+  m_Text: MUSIC VOLUME
 --- !u!222 &354109754
 CanvasRenderer:
   m_ObjectHideFlags: 0
