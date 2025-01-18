@@ -15,7 +15,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("poziom02");
         }
-        else if ((mc.score) == maxScore && maxScore == 13)
+        else if (mc.score == maxScore && maxScore == 13)
+             {
+                 SceneManager.LoadScene("poziom03");
+             }
+        else if (mc.score == maxScore && maxScore == 4)
              {
                  SceneManager.LoadScene("endScene");
              }
