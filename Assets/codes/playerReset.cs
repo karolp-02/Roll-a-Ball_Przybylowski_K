@@ -5,6 +5,7 @@ public class playerReset : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        // reset poziomu gdy gracz wypadnie poza mape
         SceneManager.LoadScene("poziom02");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

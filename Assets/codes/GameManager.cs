@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateLevel()
     {
+        // zmiana scen po zebraniu wszystkich punktow
         if (mc.score == maxScore && maxScore == 8)
         {
             SceneManager.LoadScene("poziom02");

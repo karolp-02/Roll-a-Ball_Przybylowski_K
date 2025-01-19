@@ -24,6 +24,7 @@ public class startStopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // obsluga cyklu 5 sekund ruchu, 5 sekund bezruchu
         timer += Time.deltaTime;
 
         if (timer >= startTime + stopTime)
@@ -39,8 +40,9 @@ public class startStopScript : MonoBehaviour
             setEmission(light2, red);
             setEmission(light3, red);
 
-            if (rb.linearVelocity.magnitude > 0.2f)
+            if (rb.linearVelocity.magnitude > 0.2f) // maly bufor ruchu gdyz trudne byloby zatrzymanie kulki do zera
             {
+                // reset poziomu gdy gracz ruszy sie w momencie zakazu ruszania
                 SceneManager.LoadScene("poziom03");
             }
         }
@@ -52,16 +54,14 @@ public class startStopScript : MonoBehaviour
         }
     }
 
-    // Funkcja pomocnicza do ustawiania materiału i odświeżania emisji
+    // Funkcja do zmiany materialu lamp i swiatla emisyjnego
     private void setEmission(GameObject obj, Material material)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
         renderer.material = material;
-
-        // Pobierz kolor emisji z materiału
         Color emissionColor = material.GetColor("_EmissionColor");
 
-        // Wymuś odświeżenie emisji dla Global Illumination
+        // Wymuszanie odswiezania emisji dla global illumination
         DynamicGI.SetEmissive(renderer, emissionColor);
     }
 }

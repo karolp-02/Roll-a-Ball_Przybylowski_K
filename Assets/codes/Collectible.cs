@@ -14,6 +14,7 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        // obsluga efektow zbierania punktu
         collectParticle.transform.parent = null; //odlaczam particle system od prefabu gracza aby nie znikal razem z nim
         collectParticle.Play();
         collision.gameObject.GetComponent<MovementController>().collectScore();
