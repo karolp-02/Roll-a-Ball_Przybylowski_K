@@ -61,7 +61,7 @@ public class startStopScript : MonoBehaviour
         renderer.material = material;
         Color emissionColor = material.GetColor("_EmissionColor");
 
-        // Wymuszanie odswiezania emisji dla global illumination
+        // Wymuszanie odswiezania emisji
         DynamicGI.SetEmissive(renderer, emissionColor);
     }
 }
